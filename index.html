@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockWire X - Media Coverage Plans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #051230;
+            --navy-light: #0B1630;
+            --orange: #E77E22;
+            --orange-alt: #E77F25;
+            --gold: #EDBF54;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray: #6c757d;
+            --shadow: 0 10px 40px rgba(5, 18, 48, 0.1);
+            --shadow-lg: 0 20px 60px rgba(5, 18, 48, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5, 18, 48, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.7rem 5%;
+            background: rgba(5, 18, 48, 0.98);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--orange);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-signin {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-signin:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.7rem 1.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 126, 34, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(231, 126, 34, 0.4);
+            background: var(--orange-alt);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 140px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(231, 126, 34, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(231, 126, 34, 0.15);
+            border: 1px solid rgba(231, 126, 34, 0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .hero-feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .pricing-section {
+            padding: 80px 5%;
+            background: var(--gray-light);
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .billing-toggle {
+            display: inline-flex;
+            align-items: center;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 0.4rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .toggle-option {
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .toggle-option.active {
+            color: var(--white);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            background: var(--orange);
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+
+        .save-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, #f4d06f 100%);
+            color: var(--navy);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .pricing-info {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            border: 2px solid transparent;
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .pricing-card:nth-child(1) { animation-delay: 0.1s; }
+        .pricing-card:nth-child(2) { animation-delay: 0.2s; }
+        .pricing-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-color: var(--gold);
+            transform: scale(1.05);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold) 0%, #f4d06f 100%);
+            color: var(--navy);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(237, 191, 84, 0.4);
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .pricing-card.featured .card-header h3,
+        .pricing-card.featured .card-header p,
+        .pricing-card.featured .price {
+            color: var(--white);
+        }
+
+        .card-header p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+
+        .billing-type {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card.featured .billing-type {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .pricing-card:not(.featured) .cta-button {
+            background: var(--white);
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+
+        .pricing-card:not(.featured) .cta-button:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 18, 48, 0.3);
+        }
+
+        .pricing-card.featured .cta-button {
+            background: var(--orange);
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(231, 126, 34, 0.4);
+        }
+
+        .pricing-card.featured .cta-button:hover {
+            background: var(--orange-alt);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(231, 126, 34, 0.5);
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+        }
+
+        .pricing-card.featured .features-list li {
+            border-bottom-color: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.7rem;
+            margin-top: 2px;
+        }
+
+        .guarantee {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .guarantee-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.8rem;
+        }
+
+        .comparison-section {
+            padding: 80px 5%;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .comparison-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 700;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            padding: 1.5rem;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.3s ease;
+        }
+
+        .table-row:hover {
+            background: var(--gray-light);
+        }
+
+        .table-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .table-cell:first-child {
+            justify-content: flex-start;
+            font-weight: 600;
+        }
+
+        .testimonials-section {
+            padding: 80px 5%;
+            background: var(--gray-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--navy);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--orange), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .faq-section {
+            padding: 80px 5%;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--gray-light);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(231, 126, 34, 0.1);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(231,126,34,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-orange {
+            background: var(--orange);
+            color: var(--white);
+            box-shadow: 0 6px 25px rgba(231, 126, 34, 0.4);
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(231, 126, 34, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .table-cell {
+                justify-content: flex-start;
+                padding: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <div class="logo-icon">SW</div>
+            <span>StockWire X</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#pricing" class="btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <span>⚡</span> AI-Powered Media Coverage
+        </div>
+        <h1>Choose Your Media<br>Coverage Package</h1>
+        <p>Transform ASX announcements into professional articles and videos within seconds. Published instantly to our high-traffic website and 7 social channels.</p>
+        <div class="hero-features">
+            <div class="hero-feature">
+                <div class="hero-feature-icon">✓</div>
+                <span>Instant Publishing</span>
+            </div>
+            <div class="hero-feature">
+                <div class="hero-feature-icon">✓</div>
+                <span>7 Social Channels</span>
+            </div>
+            <div class="hero-feature">
+                <div class="hero-feature-icon">✓</div>
+                <span>Professional Quality</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="toggle-container">
+            <div class="billing-toggle">
+                <div class="toggle-slider" id="toggleSlider"></div>
+                <div class="toggle-option active" data-billing="quarterly" id="quarterlyToggle">
+                    Quarterly
+                </div>
+                <div class="toggle-option" data-billing="annual" id="annualToggle">
+                    Annual
+                    <span class="save-badge">Save 40%</span>
+                </div>
+            </div>
+            <div class="pricing-info">
+                <span class="guarantee-icon">💰</span>
+                <span>Save 40% with annual billing. Cancel anytime, no questions asked.</span>
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Silver</h3>
+                    <p>Essential coverage for emerging companies</p>
+                </div>
+                <div class="price-container">
+                    <div class="price">$1,500</div>
+                    <span class="price-period">/quarter</span>
+                    <div class="billing-type">Billed quarterly</div>
+                </div>
+                <button class="cta-button">Get Started</button>
+                <ul class="features-list">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Unlimited articles per quarter</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Professional article creation</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Homepage placement</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Social media distribution (7 channels)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Website publication</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Dedicated account manager</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Email support</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="card-header">
+                    <h3>Gold</h3>
+                    <p>Complete coverage for growth companies</p>
+                </div>
+                <div class="price-container">
+                    <div class="price">$2,500</div>
+                    <span class="price-period">/quarter</span>
+                    <div class="billing-type">Billed quarterly</div>
+                </div>
+                <button class="cta-button">Get Started</button>
+                <ul class="features-list">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Unlimited articles per quarter</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Everything in Silver, plus:</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Unlimited video content</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Priority content processing</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Enhanced video production</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Featured homepage placement</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Dedicated account manager</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Priority support (24hrs response)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Platinum</h3>
+                    <p>Premium coverage for established companies</p>
+                </div>
+                <div class="price-container">
+                    <div class="price">$4,000</div>
+                    <span class="price-period">/quarter</span>
+                    <div class="billing-type">Billed quarterly</div>
+                </div>
+                <button class="cta-button">Get Started</button>
+                <ul class="features-list">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Unlimited articles</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Everything in Gold, plus:</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Unlimited video content</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>3-Month advertise space</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Instant priority processing</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Premium video production</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Exclusive homepage team</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>"Big News Blast" Email feature</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>White-label options</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Dedicated account manager</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>Executive reporting suite</span>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <span>24/7 priority support</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <div class="guarantee-item">
+                <span class="guarantee-icon">🛡️</span>
+                <span>30-day money-back guarantee</span>
+            </div>
+            <div class="guarantee-item">
+                <span class="guarantee-icon">✓</span>
+                <span>Cancel anytime</span>
+            </div>
+            <div class="guarantee-item">
+                <span class="guarantee-icon">🔒</span>
+                <span>No setup fees</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2>Compare All Plans</h2>
+            <p>Find the perfect package for your company's needs</p>
+        </div>
+        <div class="comparison-table">
+            <div class="table-header">
+                <div class="table-cell">Features</div>
+                <div class="table-cell">Silver</div>
+                <div class="table-cell">Gold</div>
+                <div class="table-cell">Platinum</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Announcements per quarter</div>
+                <div class="table-cell">Unlimited</div>
+                <div class="table-cell">Unlimited</div>
+                <div class="table-cell">Unlimited</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Article creation</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Video content</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">Unlimited</div>
+                <div class="table-cell">Unlimited</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Social media distribution</div>
+                <div class="table-cell">7 channels</div>
+                <div class="table-cell">7 channels</div>
+                <div class="table-cell">7 channels</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Processing speed</div>
+                <div class="table-cell">Standard</div>
+                <div class="table-cell">Priority</div>
+                <div class="table-cell">Instant</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Homepage placement</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Account manager</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+                <div class="table-cell">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">Support response time</div>
+                <div class="table-cell">48hrs</div>
+                <div class="table-cell">24hrs</div>
+                <div class="table-cell">Instant</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">3-Month advertise space</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">"Big News Blast" Email</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✓</div>
+            </div>
+            <div class="table-row">
+                <div class="table-cell">White-label options</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✗</div>
+                <div class="table-cell">✓</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>Trusted by ASX Leaders</h2>
+            <p>See what our clients say about StockWire X</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"StockWire X transformed our investor communications. The instant publishing and professional quality have significantly increased our market visibility."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MC</div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>CEO, Tech Mining Corp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The Gold package has been exceptional value. Our announcements now reach thousands of investors within minutes, and the analytics are incredibly insightful."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SW</div>
+                    <div class="author-info">
+                        <h4>Sarah Williams</h4>
+                        <p>IR Manager, GH Australia Ltd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Outstanding service. The dedicated account manager and priority support are the best. Highly recommend for any ASX company."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DT</div>
+                    <div class="author-info">
+                        <h4>David Thompson</h4>
+                        <p>CFO, Energy Resources Ltd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about our pricing</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How quickly are announcements published?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Silver packages are published within 2 hours, Gold within 30 minutes, and Platinum instantly. All packages include simultaneous distribution across our website and 7 social channels.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I upgrade or downgrade my plan?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! You can upgrade at any time and the difference will be prorated. Downgrades take effect at the next billing cycle. Contact your account manager for seamless transitions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's included in the "Big News Blast" Email?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Exclusive to Platinum tier, this feature sends your major announcements to our entire investor database of 50,000+ subscribers, ensuring maximum visibility for your most important news.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is there a contract or can I cancel anytime?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No long-term contracts required. You can cancel anytime with no penalties. We also offer a 30-day money-back guarantee if you're not completely satisfied.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer custom enterprise solutions?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! For large organizations or unique requirements, we can create custom packages. Contact our sales team to discuss your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Media Coverage?</h2>
+            <p>Join hundreds of ASX companies already using StockWire X to amplify their market presence.</p>
+            <div class="cta-buttons">
+                <a href="#pricing" class="btn-large btn-orange">Get Started Today</a>
+                <a href="#contact" class="btn-large btn-outline">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="justify-content: center; margin-bottom: 2rem;">
+                <div class="logo-icon">SW</div>
+                <span>StockWire X</span>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StockWire X. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const quarterlyToggle = document.getElementById('quarterlyToggle');
+        const annualToggle = document.getElementById('annualToggle');
+        const toggleSlider = document.getElementById('toggleSlider');
+        const pricingCards = document.querySelectorAll('.pricing-card');
+
+        const prices = {
+            quarterly: {
+                silver: '$1,500',
+                gold: '$2,500',
+                platinum: '$4,000',
+                period: '/quarter',
+                billing: 'Billed quarterly'
+            },
+            annual: {
+                silver: '$900',
+                gold: '$1,500',
+                platinum: '$2,400',
+                period: '/quarter',
+                billing: 'Billed annually (40% savings)'
+            }
+        };
+
+        let currentBilling = 'quarterly';
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        function updatePrices(billing) {
+            const cards = ['silver', 'gold', 'platinum'];
+            cards.forEach((tier, index) => {
+                const card = pricingCards[index];
+                const priceElement = card.querySelector('.price');
+                const periodElement = card.querySelector('.price-period');
+                const billingElement = card.querySelector('.billing-type');
+
+                priceElement.textContent = prices[billing][tier];
+                periodElement.textContent = prices[billing].period;
+                billingElement.textContent = prices[billing].billing;
+            });
+        }
+
+        function setTogglePosition(element) {
+            const rect = element.getBoundingClientRect();
+            const parentRect = element.parentElement.getBoundingClientRect();
+            toggleSlider.style.left = (rect.left - parentRect.left) + 'px';
+            toggleSlider.style.width = rect.width + 'px';
+            toggleSlider.style.height = rect.height + 'px';
+        }
+
+        quarterlyToggle.addEventListener('click', () => {
+            if (currentBilling !== 'quarterly') {
+                currentBilling = 'quarterly';
+                quarterlyToggle.classList.add('active');
+                annualToggle.classList.remove('active');
+                setTogglePosition(quarterlyToggle);
+                updatePrices('quarterly');
+            }
+        });
+
+        annualToggle.addEventListener('click', () => {
+            if (currentBilling !== 'annual') {
+                currentBilling = 'annual';
+                annualToggle.classList.add('active');
+                quarterlyToggle.classList.remove('active');
+                setTogglePosition(annualToggle);
+                updatePrices('annual');
+            }
+        });
+
+        setTogglePosition(quarterlyToggle);
+
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
